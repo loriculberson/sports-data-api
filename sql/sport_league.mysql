@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS `sport-data`.sport_league;
+CREATE TABLE sport_league(
+    id int NOT NULL AUTO_INCREMENT
+   , name     VARCHAR(255) NOT NULL
+  ,division VARCHAR(255) NOT NULL
+  ,PRIMARY KEY (id)
+);
+INSERT INTO sport_league(name,division) VALUES ('MLB','AL East');
+INSERT INTO sport_league(name,division) VALUES ('MLB','AL Central');
+INSERT INTO sport_league(name,division) VALUES ('MLB','AL West');
+INSERT INTO sport_league(name,division) VALUES ('MLB','NL  East');
+INSERT INTO sport_league(name,division) VALUES ('MLB','NL  Central');
+INSERT INTO sport_league(name,division) VALUES ('MLB','NL  West');
+INSERT INTO sport_league(name,division) VALUES ('NBA','Eastern Atlantic');
+INSERT INTO sport_league(name,division) VALUES ('NBA','Eastern Central');
+INSERT INTO sport_league(name,division) VALUES ('NBA','Eastern Southeast');
+INSERT INTO sport_league(name,division) VALUES ('NBA','Western Northwest');
+INSERT INTO sport_league(name,division) VALUES ('NBA','Western Pacific');
+INSERT INTO sport_league(name,division) VALUES ('NBA','Western Southwest');
+INSERT INTO sport_league(name,division) VALUES ('NFL','AFC East');
+INSERT INTO sport_league(name,division) VALUES ('NFL','AFC North');
+INSERT INTO sport_league(name,division) VALUES ('NFL','AFC West');
+INSERT INTO sport_league(name,division) VALUES ('NFL','AFC South');
+INSERT INTO sport_league(name,division) VALUES ('NFL','NFC East');
+INSERT INTO sport_league(name,division) VALUES ('NFL','NFC North');
+INSERT INTO sport_league(name,division) VALUES ('NFL','NFC West');
+INSERT INTO sport_league(name,division) VALUES ('NFL','NFC South');
