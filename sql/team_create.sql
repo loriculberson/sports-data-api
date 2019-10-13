@@ -1,13 +1,16 @@
 DROP TABLE IF EXISTS `sport-data`.team;
 CREATE TABLE team(
   id int NOT NULL AUTO_INCREMENT
+  PRIMARY KEY 
   ,name VARCHAR(255) NOT NULL 
   ,city   VARCHAR(255) NOT NULL
   ,state  VARCHAR(255) NOT NULL
   ,venue  VARCHAR(255) NOT NULL
+  ,sport_type  VARCHAR(255) NOT NULL
   ,league VARCHAR(255) NOT NULL
-  ,PRIMARY KEY (id)
+  ,division VARCHAR(255) NOT NULL
 );
+
 INSERT INTO team(name,city,state,venue,league) VALUES ('Celtics','Boston','Massachusetts','TD Garden','NBA');
 INSERT INTO team(name,city,state,venue,league) VALUES ('Nets','Brooklyn','New York','Barclays Center','NBA');
 INSERT INTO team(name,city,state,venue,league) VALUES ('Knicks','New York','New York','Madison Square Garden','NBA');
