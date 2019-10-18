@@ -1,18 +1,14 @@
 const request = require('supertest');
-const app = require('../app');
-const sequelize = require('../sequelizeConfig')
-
-// console.log('seq', sequelize)
-// sequelize
-//   .authenticate()
-//   .then(() => {
-//     console.log('Connection has been established successfully.');
-//   })
-//   .catch(err => {
-//     console.error('Unable to connect to the database:', err);
-//   });
+let app;
 
 describe('Teams', () => {
+  beforeAll( () => { 
+    app = require('../app') 
+  });
+  afterEach( async () => {    
+    await app.close();
+  });
+
   it('returns welcome message', async () => {
     const welcomeMessage = "Sports data, Node.js, Express, and Postgres API"
     const response = await request(app).get('/api')
@@ -21,7 +17,7 @@ describe('Teams', () => {
     expect(response.body.info).toBe(welcomeMessage);
   });
 
-  it.only('returns all teams', async () => {
+  it('returns all teams', async () => {
     const allTeams = [{
       name: "Astros", 
       city: "Houston", 
@@ -32,9 +28,12 @@ describe('Teams', () => {
       division: "West"
     }]
     const response = await request(app).get('/api/teams')
+    
     // console.log('res', response)
-    // expect(response.status).toBe(200);
-    expect(response.body).toBe(allTeams);
+    expect(response.status).toBe(200);
+
+    // console.log('res', response)
+    // expect(response.body).toBe(allTeams);
   });
 })
 
